@@ -4,7 +4,7 @@ from iou import intersection_over_union
 
 def non_max_suppression(
         bboxes,
-        iou_threshold,
+        iou_threshld,
         threshold,
         box_format="corners",
 ):
