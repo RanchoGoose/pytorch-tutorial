@@ -57,6 +57,9 @@ class Yolov1(nn.Module):
                         in_channels, x[1], kernel_size=x[0], stride=x[2], padding=x[3],
                     )
                 ]
+
+                in_channels = x[1]
+
             elif type(x) == str:
                 layers += [nn.MaxPool2d(kernel_size=2, stride=2)]
 
