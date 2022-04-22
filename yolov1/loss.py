@@ -25,7 +25,7 @@ class YoloLoss(nn.module):
         box_predictions = exists_box * (
             (
                 best_box * predictions[..., 26:30]
-                + (1 - bestbox) * predictions[..., 21:25]
+                + (1 - best_box) * predictions[..., 21:25]
             )
         )
 
@@ -46,7 +46,7 @@ class YoloLoss(nn.module):
 
         # For Object Loss
         pred_box = (
-            best_box * predictions[..., 25:26] + (1 - bestbox) * predictions[..., 20:21]
+            best_box * predictions[..., 25:26] + (1 - best_box) * predictions[..., 20:21]
         )
 
         # (N*N*S)
